@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
+  <persistence-unit name="workersPU" transaction-type="JTA">
+    <jta-data-source>jdbc/WorkersDS</jta-data-source>
+    <class>ru.itmo.soa.workers.model.WorkerEntity</class>
+    <class>ru.itmo.soa.workers.model.OrganizationEntity</class>
+    <class>ru.itmo.soa.workers.model.WorkerMembershipEntity</class>
+    <class>ru.itmo.soa.workers.model.PersonEmbeddable</class>
+    <class>ru.itmo.soa.workers.model.CoordinatesEmbeddable</class>
+    <properties>
+      <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+      <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+      <property name="hibernate.jdbc.time_zone" value="UTC"/>
+    </properties>
+  </persistence-unit>
+</persistence>
